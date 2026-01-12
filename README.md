@@ -26,5 +26,8 @@ part of my internship to demonstrate Flutter skills, UI/UX design, and GitHub ve
 This repository demonstrates proper version control with Git. The `main` branch contains the 
 initial setup, and feature branches are used for changes.
 
+## Note
+This is the first feature branch update to demonstrate version control.
+
 ---
 
