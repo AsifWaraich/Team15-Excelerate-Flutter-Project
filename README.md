@@ -29,5 +29,17 @@ initial setup, and feature branches are used for changes.
 ## Note
 This is the first feature branch update to demonstrate version control.
 
----
+## App Screenshots
+
+### Login Screen
+![Login](screenshots/login.png)
+
+### Home Screen
+![Home](screenshots/home.png)
+
+### Program Listing Screen
+![Listing](screenshots/listing.png)
+
+### Program Details Screen
+![Details](screenshots/details.png)
 
