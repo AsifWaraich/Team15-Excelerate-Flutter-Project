@@ -1,0 +1,28 @@
+[
+  {
+    "title": "Flutter Mobile App Development",
+    "description": "Build beautiful, natively compiled applications for mobile, web, and desktop from a single codebase.",
+    "difficulty": "Beginner",
+    "duration": "12 Weeks"
+  },
+  {
+    "title": "Full-Stack Web Development (MERN)",
+    "description": "Master the MERN stack (MongoDB, Express, React, Node.js) to build dynamic web applications.",
+    "difficulty": "Intermediate",
+    "duration": "16 Weeks"
+  },
+  {
+    "title": "Data Science With Python",
+    "description": "Learn to analyze data, create visualizations, and build machine learning models using Python.",
+    "difficulty": "Intermediate",
+    "duration": "14 Weeks"
+  },
+  {
+    "title": "Cybersecurity & Ethical Hacking",
+    "description": "Understand network security, penetration testing, and how to defend against cyber threats.",
+    "difficulty": "Advanced",
+    "duration": "10 Weeks"
+  }
+]
+
+

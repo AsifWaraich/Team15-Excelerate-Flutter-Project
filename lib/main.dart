@@ -38,18 +38,3 @@ class MyApp extends StatelessWidget {
     );
   }
 }
-
-// 2. DATA MODEL
-class Program {
-  final String title;
-  final String description;
-  final String difficulty;
-  final String duration;
-
-  Program({
-    required this.title,
-    required this.description,
-    required this.difficulty,
-    required this.duration,
-  });
-}

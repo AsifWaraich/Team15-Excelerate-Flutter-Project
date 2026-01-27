@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:learnhub/main.dart';
+import 'package:learnhub/models/program.dart';
 
 class ProgramDetailsScreen extends StatelessWidget {
   final Program program; // Receive data from previous screen
