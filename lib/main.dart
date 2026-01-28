@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:learnhub/login_screen.dart';
+import 'package:learnhub/splash_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -34,7 +34,7 @@ class MyApp extends StatelessWidget {
           prefixIconColor: Colors.blueAccent,
         ),
       ),
-      home: const LoginScreen(),
+      home: const SplashScreen(),
     );
   }
 }
