@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:learnhub/feedback_list_screen.dart';
 import 'package:learnhub/program_list.dart';
 
 class HomeScreen extends StatelessWidget {
-  const HomeScreen({super.key});
+  final String userEmail;
+
+  const HomeScreen({super.key, required this.userEmail});
 
   @override
   Widget build(BuildContext context) {
@@ -26,11 +29,20 @@ class HomeScreen extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             const Text(
-              'Hello, User!',
+              'Hello, Learner!',
               style: TextStyle(
                 fontSize: 26,
                 fontWeight: FontWeight.bold,
                 color: Color(0xFF1565C0),
+              ),
+            ),
+            const SizedBox(height: 5),
+            Text(
+              userEmail,
+              style: const TextStyle(
+                fontSize: 16,
+                fontWeight: FontWeight.w500,
+                color: Colors.black87,
               ),
             ),
             const SizedBox(height: 5),
@@ -57,7 +69,16 @@ class HomeScreen extends StatelessWidget {
                   _buildMenuCard(context, Icons.message, 'Messages', Colors.green, null),
                   _buildMenuCard(context, Icons.favorite, 'Favorites', Colors.red, null),
                   _buildMenuCard(context, Icons.settings, 'Settings', Colors.orange, null),
-                  _buildMenuCard(context, Icons.help, 'Support', Colors.teal, null),
+                  _buildMenuCard(context, Icons.feedback_outlined, 'Feedback', Colors.teal, () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => FeedbackListScreen(
+                          userEmail: userEmail,
+                        ),
+                      ),
+                    );
+                  }),
                 ],
               ),
             ),
@@ -74,9 +95,12 @@ class HomeScreen extends StatelessWidget {
       surfaceTintColor: Colors.white,
       color: Colors.white,
       child: InkWell(
-        onTap: onTap ?? () {
-          ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text("Feature coming soon!")));
-        },
+        onTap: onTap ??
+            () {
+              ScaffoldMessenger.of(context).showSnackBar(
+                const SnackBar(content: Text("Feature coming soon!")),
+              );
+            },
         borderRadius: BorderRadius.circular(20),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
