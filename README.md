@@ -72,3 +72,11 @@ Example commit messages for Week 3:
 ### Program Details Screen
 ![Details](screenshots/details.png)
 
+### Recent Updates (Week 3)
+New Features: Added a functional signUp form as well as feedback form.
+
+API Integration: Feedback Screen is now fetching the real data from a sample json file (instead of hardcoded text).
+
+Validation: Both Forms (signUp and feedback) includes validation (can't be empty having specific amount of character).
+
+Splash Screen: Added splash screen feature which we forgot previous week.
