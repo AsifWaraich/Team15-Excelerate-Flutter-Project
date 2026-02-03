@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'dart:async';
-import 'package:learnhub/login_screen.dart';
+import 'package:learnhub/onboarding_screen.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
@@ -13,24 +13,24 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   void initState() {
     super.initState();
-    // Navigate to LoginScreen after 3 seconds
     Timer(const Duration(seconds: 3), () {
-      Navigator.pushReplacement(
-        context,
-        MaterialPageRoute(builder: (context) => const LoginScreen()),
-      );
+      if (mounted) {
+        Navigator.pushReplacement(
+          context,
+          MaterialPageRoute(builder: (context) => const OnboardingScreen()),
+        );
+      }
     });
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xFF1565C0), // Main brand color
+      backgroundColor: const Color(0xFF1565C0),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            // --- App Logo ---
             Container(
               padding: const EdgeInsets.all(20),
               decoration: const BoxDecoration(
@@ -38,13 +38,12 @@ class _SplashScreenState extends State<SplashScreen> {
                 shape: BoxShape.circle,
               ),
               child: const Icon(
-                Icons.school_outlined,
+                Icons.school,
                 size: 80,
                 color: Color(0xFF1565C0),
               ),
             ),
             const SizedBox(height: 24),
-            // --- App Name ---
             const Text(
               'LearnHub',
               style: TextStyle(
@@ -55,7 +54,6 @@ class _SplashScreenState extends State<SplashScreen> {
               ),
             ),
             const SizedBox(height: 10),
-            // --- Tagline ---
             Text(
               'Empower Your Future',
               style: TextStyle(

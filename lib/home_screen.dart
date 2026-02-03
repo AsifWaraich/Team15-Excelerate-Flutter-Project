@@ -1,6 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:learnhub/feedback_list_screen.dart';
+import 'package:learnhub/side_menu.dart';
 import 'package:learnhub/program_list.dart';
+import 'package:learnhub/profile_screen.dart';
+import 'package:learnhub/messages_screen.dart';
+import 'package:learnhub/favorites_screen.dart';
+import 'package:learnhub/settings_screen.dart';
 
 class HomeScreen extends StatelessWidget {
   final String userEmail;
@@ -22,7 +27,7 @@ class HomeScreen extends StatelessWidget {
           IconButton(icon: const Icon(Icons.notifications_none), onPressed: () {}),
         ],
       ),
-      drawer: const Drawer(),
+      drawer: const SideMenu(),
       body: Padding(
         padding: const EdgeInsets.all(20.0),
         child: Column(
@@ -57,7 +62,11 @@ class HomeScreen extends StatelessWidget {
                 crossAxisSpacing: 15,
                 mainAxisSpacing: 15,
                 children: [
-                  _buildMenuCard(context, Icons.person, 'Profile', Colors.blue, null),
+                  _buildMenuCard(context, Icons.person, 'Profile', Colors.blue, () {
+            Navigator.push(context, MaterialPageRoute(builder: (context) => const ProfileScreen()));
+            },
+
+                  ),
 
                   // NAVIGATION: This card goes to Program List
                   _buildMenuCard(context, Icons.fitness_center, 'Programs', Colors.purple, () {
@@ -66,9 +75,15 @@ class HomeScreen extends StatelessWidget {
                       MaterialPageRoute(builder: (context) => const ProgramListingScreen()),
                     );
                   }),
-                  _buildMenuCard(context, Icons.message, 'Messages', Colors.green, null),
-                  _buildMenuCard(context, Icons.favorite, 'Favorites', Colors.red, null),
-                  _buildMenuCard(context, Icons.settings, 'Settings', Colors.orange, null),
+                  _buildMenuCard(context, Icons.message, 'Messages', Colors.green, () {
+                    Navigator.push(context, MaterialPageRoute(builder: (context) => const MessagesScreen()));
+                  },),
+                  _buildMenuCard(context, Icons.favorite, 'Favorites', Colors.red, () {
+                    Navigator.push(context, MaterialPageRoute(builder: (context) => const FavoritesScreen()));
+                  },),
+                  _buildMenuCard(context, Icons.settings, 'Settings', Colors.orange, () {
+                    Navigator.push(context, MaterialPageRoute(builder: (context) => const SettingsScreen()));
+                  },),
                   _buildMenuCard(context, Icons.feedback_outlined, 'Feedback', Colors.teal, () {
                     Navigator.push(
                       context,
