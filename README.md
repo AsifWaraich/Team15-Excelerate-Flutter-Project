@@ -1,82 +1,99 @@
-# LearnHub - Learning Platform App
+# 🚀 LearnHub - Professional E-Learning Platform
 
-## Project Vision
-LearnHub is a Flutter-based learning platform app designed to provide users with online 
-courses, program listings, and personal progress tracking. This project is developed as
-part of my internship to demonstrate Flutter skills, UI/UX design, and GitHub version control.
+**Version:** 1.0.0
+**Status:** Stable Release
+**Team:**
+* **Asif Javed** (Lead Developer & UI/UX)
+* **Abdul Rehman Rao** (Feature Implementation)
 
-## Target Users
-- **Learners:** Can browse programs/courses, view details, and track progress.
-- **Admins:** Can manage program listings, monitor user progress, and update content.
+[![Download APK](https://img.shields.io/badge/Download-Android%20APK-3DDC84?style=for-the-badge&logo=android&logoColor=white)](https://github.com/AsifWaraich/Team15-Excelerate-Flutter-Project/releases/download/v1.0.0/app-arm64-v8a-release.apk)
+[![Watch Demo](https://img.shields.io/badge/Watch-Video_Demo-FF0000?style=for-the-badge&logo=youtube&logoColor=white)](https://www.youtube.com/watch?v=OJjC0N39MBU)
 
-## Key Features
-1. User Authentication (Login/Sign Up)
-2. Home Dashboard for learners (shows logged-in user email)
-3. Program Listing Screen backed by JSON data
-4. Program Details/Profile Screen
-5. Feedback form with validation
-6. Basic navigation and responsive design
+> *This project was developed as part of an internship to demonstrate proficiency in Flutter development, UI/UX design, and Version Control.*
 
-## Week 3 Updates (API / JSON + Forms)
-- **Program Listing & Details**
-  - Program list now loads from a **local JSON file** (`assets/data/programs.json`) using a repository.
-  - Listing shows a **loading indicator** while data is fetched and an **error state with retry button** if loading fails.
-  - Program details screen receives a `Program` object loaded from JSON.
-- **Forms & Validation**
-  - **Login form** now uses a `Form` with validation:
-    - Email: required + valid email format.
-    - Password: required + minimum 6 characters.
-    - Login checks credentials saved from **Sign Up** (stored locally).
-  - **Sign Up form** saves user information locally so the user can log in later.
-  - On successful login, the user’s **email is passed to the Home screen** and displayed at the top.
-  - **Feedback**: the Home tile opens a feedback list where you can **add / edit / delete** saved feedback entries.
-  - **Feedback form** includes:
-    - Name (required),
-    - Email (required + valid format, pre-filled from logged-in user),
-    - Feedback message (required, minimum length).
-  - Feedback form shows a loading indicator while "submitting" and a success message when done.
+---
 
-## Project Structure
-- `lib/` → Flutter app code
-  - `models/program.dart` → Program model with JSON parsing.
-  - `data/program_repository.dart` → Loads program data from JSON (mock API).
-  - `login_screen.dart` → Login form with validation.
-  - `home_screen.dart` → Dashboard showing the logged-in user’s email.
-  - `program_list.dart` → Program listing using JSON data + loading/error handling.
-  - `program_details.dart` → Program details UI.
-  - `feedback_screen.dart` → Feedback form with validation.
-- `android/` → Android-specific files
-- `ios/` → iOS-specific files
-- `pubspec.yaml` → Flutter project configuration and assets
+## 📺 Project Demo
+Watch the full walkthrough of the app features:
 
-## GitHub Repository
-This repository demonstrates proper version control with Git. The `main` branch contains the 
-initial setup, and feature branches are used for changes.
+[![Watch the Demo](https://img.youtube.com/vi/OJjC0N39MBU/0.jpg)](https://www.youtube.com/watch?v=OJjC0N39MBU)
+*(Click the image above to watch the video)*
 
-Example commit messages for Week 3:
-- `Connected program listing to JSON data`
-- `Added login and feedback forms with validation`
-- `Added loading/error handling and updated README for Week 3`
+## 📱 App Screenshots
+| **Login & Auth** | **Dashboard** | **Navigation** | **Course Listing** |
+|:---:|:---:|:---:|:---:|
+| <img src="screenshots/login.jpeg" width="200"> | <img src="screenshots/home.jpeg" width="200"> | <img src="screenshots/side_menu.jpeg" width="200"> | <img src="screenshots/online_videos.jpeg" width="200"> |
 
-## App Screenshots
+| **Video Player** | **Offline Notes** | **Quiz Interface** | **Score Result** |
+|:---:|:---:|:---:|:---:|
+| <img src="screenshots/video_interface.jpeg" width="200"> | <img src="screenshots/Notes.jpeg" width="200"> | <img src="screenshots/Quiz.jpeg" width="200"> | <img src="screenshots/Quiz_score.jpeg" width="200"> |
 
-### Login Screen
-![Login](screenshots/login.png)
+---
 
-### Home Screen
-![Home](screenshots/home.png)
+## 1. Project Vision
+LearnHub is a comprehensive mobile e-learning application built with Flutter. It is designed to democratize access to technical education by providing a structured learning environment. Users can access video tutorials, detailed reading materials, and interactive assessments across disciplines like Web Development, App Development, Data Science, and Cybersecurity.
 
-### Program Listing Screen
-![Listing](screenshots/listing.png)
+## 2. Target Users
+- **Learners:** Can browse programs, watch video lessons, read offline notes, take quizzes, and track scores.
+- **Mentors/Admins:** Can manage program listings and monitor student progress.
 
-### Program Details Screen
-![Details](screenshots/details.png)
+## 3. Key Features
+### Core Experience
+* **User Onboarding:** A smooth entry flow with Splash Screen and a 3-slide introduction to the app's value.
+* **Authentication:** Secure Login and Sign-Up flows with input validation.
+* **Dashboard:** A grid-based central hub displaying available courses and the user's profile status.
 
-### Recent Updates (Week 3)
-New Features: Added a functional signUp form as well as feedback form.
+### Learning Engine
+* **Video Integration:** Embedded YouTube video player for seamless viewing of course lectures.
+* **Offline Notes:** Markdown-style reader for studying theory without an internet connection.
+* **Interactive Quizzes:** Real-time assessment system with immediate feedback (Green/Red indicators) and score calculation.
 
-API Integration: Feedback Screen is now fetching the real data from a sample json file (instead of hardcoded text).
+### Technical Features
+* **Repository Pattern:** Separation of concerns using a Data Repository to manage course content.
+* **Form Validation:** Strict validation logic for Email, Password, and Feedback forms.
+* **Responsive Design:** Optimized UI that adapts to different screen sizes.
 
-Validation: Both Forms (signUp and feedback) includes validation (can't be empty having specific amount of character).
+## 4. Tech Stack
+* **Framework:** Flutter (Dart)
+* **Architecture:** MVC (Model-View-Controller) with Repository Pattern.
+* **State Management:** `setState` for local UI state and callbacks for data flow.
+* **IDE:** Android Studio / VS Code.
 
-Splash Screen: Added splash screen feature which we forgot previous week.
+## 5. Project Structure
+The codebase is organized for scalability:
+
+- `lib/`
+    - `models/` → Data models (`program.dart`, `feedback_item.dart`) for structured data parsing.
+    - `data/` → `program_repository.dart` (Manages Courses, Videos, Notes, and Quiz Data).
+    - `screens/`
+        - `splash_screen.dart` → Branded entry point.
+        - `onboarding_screen.dart` → Feature introduction slider.
+        - `login_screen.dart` → Authentication logic.
+        - `home_screen.dart` → Main navigation hub with Side Drawer.
+        - `program_details.dart` → Tab-based course view (Videos, Notes, Quiz).
+        - `quiz_screen.dart` → Interactive testing engine.
+    - `widgets/` → Reusable UI components (Drawer, Video Player).
+
+## 6. Installation & Setup
+To run this project locally:
+
+1.  **Clone the repository:**
+    ```bash
+    git clone [https://github.com/AsifWaraich/Team15-Excelerate-Flutter-Project.git](https://github.com/AsifWaraich/Team15-Excelerate-Flutter-Project.git)
+    ```
+2.  **Install dependencies:**
+    ```bash
+    flutter pub get
+    ```
+3.  **Run the app:**
+    ```bash
+    flutter run
+    ```
+
+## ⬇️ Download the App
+Try the app on your Android device right now!
+
+[![Download APK](https://img.shields.io/badge/Download-Android%20APK-3DDC84?style=for-the-badge&logo=android&logoColor=white)](https://github.com/AsifWaraich/Team15-Excelerate-Flutter-Project/releases/download/v1.0.0/app-arm64-v8a-release.apk)
+
+*(Note: Since this is not from the Play Store, you may need to "Allow installation from unknown sources" in your settings.)*
+
